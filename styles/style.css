@@ -56,6 +56,9 @@
   text-transform: uppercase;
 }
 
+/* --------------------HEADER-menu-------------------- */
+
+
 .header__theme-menu {
   margin-block: 25px;
 }
@@ -63,12 +66,8 @@
 .theme-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: 6px;
   transform: translateX(10px)
-}
-
-.theme-menu__item {
-  
 }
 
 .theme-menu__button {
@@ -80,12 +79,53 @@
   font-family: var(--accent-font);
   font-size: 14px;
   font-weight: var(--text-font-weight);
+  transition: opacity .3s ease;
+}
+
+.theme-menu__button::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  margin-top: 2px;
+  background-color: var(--accent-color);
+  /*transform: scaleX(0);*/
+  transition: width .3s ease, opacity .3s ease;
+}
+
+.theme-menu__button:focus {
+  opacity: .6;
+  outline: none;
+}
+
+.theme-menu__button:focus-visible::after {
+  /*transform: scaleX(1);*/
+  width: 100%;
+}
+
+.theme-menu__button:hover {
+  opacity: .6;
+}
+
+.theme-menu__button:disabled {
+  opacity: .6;
+  pointer-events: none;
 }
 
 .theme-menu__button:disabled::before {
   content: '▶';
   position: absolute;
   inset-inline-start: -19px;
+  animation: drifting 0.5s infinite ease-in-out alternate;
+}
+
+@keyframes drifting {
+  from {
+    inset-inline-start: -19px;
+  }
+  to {
+    inset-inline-start: -24px;
+  }
 }
 
 /* --------------------MAIN-------------------- */
@@ -99,6 +139,8 @@
   border: 2px solid var(--accent-color);
 }
 
+/* --------------------MAIN-card-------------------- */
+
 .content__card {
   inline-size: 100%;
   font-size: 18px;
@@ -106,9 +148,11 @@
 }
 
 .card__title {
-  padding: 5px 10px;
+  padding: 4px 10px;
   font-size: inherit;
 }
+
+/* --------------------MAIN-image-------------------- */
 
 .card__image__box {
   position: relative;
@@ -152,6 +196,8 @@
   }
 }
 
+/* --------------------MAIN-content-------------------- */
+
 .card__content {
   padding: 25px 30px 0 25px;
 }
@@ -166,6 +212,8 @@
 .card__content-text + .card__content-text {
   margin-block-start: 27px;
 }
+
+/* --------------------MAIN-like-------------------- */
 
 .card_like-section {
   display: flex;
