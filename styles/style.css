@@ -15,6 +15,239 @@
 */
 
 .page {
+  display: flex;
+  flex-direction: column;
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font);
+  font-variation-settings: 'wgth' var(--text-font-weight);
+  color: var(--accent-color);
+  background-color: var(--bg-color);
+  background-image:
+    repeating-linear-gradient(90deg, var(--bg-image-color_1), transparent 2px),
+    repeating-linear-gradient(var(--bg-image-color_1), transparent 2px),
+    linear-gradient(var(--bg-image-color_2), var(--bg-image-color_3));
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* --------------------HEADER-------------------- */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  inline-size: 100%;
+  background-color: inherit;
+  margin: 100px auto 102px;
+  font-family: var(--accent-font);
+  border: 2px solid var(--accent-color);
+}
+
+.header__logo {
+  margin-block-start: 32%;
+  margin-block-end: 20px;
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header__title {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  text-transform: uppercase;
+}
+
+.header__theme-menu {
+  margin-block: 25px;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  transform: translateX(10px)
+}
+
+.theme-menu__item {
+  
+}
+
+.theme-menu__button {
+  position: relative;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  text-transform: uppercase;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: var(--text-font-weight);
+}
+
+.theme-menu__button:disabled::before {
+  content: '▶';
+  position: absolute;
+  inset-inline-start: -19px;
+}
+
+/* --------------------MAIN-------------------- */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin: auto;
+  inline-size: 100%;
+  border: 2px solid var(--accent-color);
+}
+
+.content__card {
+  inline-size: 100%;
+  font-size: 18px;
+  background-color: var(--bg-color);
+}
+
+.card__title {
+  padding: 5px 10px;
+  font-size: inherit;
+}
+
+.card__image__box {
+  position: relative;
+  display: flex;
+  border-block: 2px solid var(--accent-color);
+}
+
+.card__image {
+  inline-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card__image-label {
+  position: absolute;
+  inset-inline-end: 25px;
+  inset-block-start: 25px;
+  color: var(--accent-color);
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: var(--text-font-weight);
+  line-height: normal;
+  text-transform: uppercase;
+  mix-blend-mode: hard-light;
+  opacity: .5;
+  text-shadow:
+    -1px 0 var(--bg-color),
+    0 1px var(--bg-color),
+    1px 0 var(--bg-color),
+    0 -1px var(--bg-color);
+}
+
+@supports ((text-stroke: 1px var(--bg-color))
+  or (-webkit-text-stroke: 1px var(--bg-color))) {
+  
+  .card__image-label {
+    -webkit-text-stroke: 1px var(--bg-color);
+    text-stroke: 1px var(--bg-color);
+    text-shadow: none;
+  }
+}
+
+.card__content {
+  padding: 25px 30px 0 25px;
+}
+
+.card__content-text {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 116.667%;
+}
+
+.card__content-text + .card__content-text {
+  margin-block-start: 27px;
+}
+
+.card_like-section {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  justify-content: end;
+  padding: 25px;
+}
+
+.card__icon-button {
+  display: flex;
+  background-color: inherit;
+  border: none;
+}
+
+.like-icon {
+  margin: auto;
+  fill: var(--accent-color);
+}
+
+.card__like-button {
+  width: 130px;
+  height: 38px;
+  padding: 9px 17px;
+  border: 2px solid var(--accent-color);
+  background-color: var(--bg-color);
+}
+
+.button__text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: var(--text-font-weight);
+  line-height: 90%;
+}
+
+/* --------------------FOOTER-------------------- */
+
+.footer {
+  display: flex;
+  inline-size: 100%;
+  margin: auto;
+}
+
+.save-button {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  margin: 52px auto 100px;
+  padding: 15px 20px;
+  border: 2px solid var(--accent-color);
+  background-color: var(--bg-color);
+}
+
+.save-button-icon {
+  inline-size: 28px;
+  block-size: 28px;
+}
+
+/* --------------------MEDIA-------------------- */
+
+@media(width > 376px) {
+  
+  .header,
+  .content,
+  .footer {
+    inline-size: 48.5%;
+    max-inline-size: 1440px;
+  }
+
+  .header__logo {
+    margin-block-start: 19.5%;
+    max-inline-size: 1440px;
+  }
+
+  .save-button {
+    flex-direction: row;
+  }
+
+  .save-button-icon {
+    inline-size: 21px;
+    block-size: 21px;
+  }
+
 }
