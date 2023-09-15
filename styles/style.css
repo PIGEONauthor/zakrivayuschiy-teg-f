@@ -490,3 +490,33 @@
     padding: 30px;
   }
 }
+
+/* --------------------FILTERS-------------------- */
+
+.paper {
+  filter: blur(2px);
+}
+
+.begining {
+  filter: contrast(150%);
+}
+
+.searching {
+  filter: saturate(500%);
+}
+
+.together {
+  filter: sepia(50%);
+}
+
+.strategy {
+  filter: invert(100%);
+}
+
+.concentration {
+  filter: hue-rotate(240deg);
+}
+
+.new-world {
+  filter: brightness(130%) saturate(200%);
+}

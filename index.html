@@ -19,7 +19,7 @@
       <div class="dialog__content">
         <div class="dialog__icon">
           <svg viewBox="0 0 40 40" class="floppy">
-            <use href="#floppy">
+            <use href="#floppy"/>
           </svg>
         </div>
         <p>Вставьте дискету, чтобы продолжить</p>
@@ -64,7 +64,7 @@
       <article class="content__card">
         <h2 class="card__title">Фритрек и нулевой спринт: Подготовка к работе</h2>
         <div class="card__image__box">
-          <img class="card__image" src="./images/image.png" alt="картинка с изображением автомобиля">
+          <img class="card__image car" src="./images/image.png" alt="картинка с изображением автомобиля">
           <span class="card__image-label">&lt;/HTML&gt;</span>
         </div>
         <div class="card__content">
@@ -103,7 +103,7 @@
       <article class="content__card">
         <h2 class="card__title">1 спринт: Я — чистый лист</h2>
         <div class="card__image__box">
-          <img class="card__image" src="./images/paper.jpg" alt="картинка чистоголиста">
+          <img class="card__image paper" src="./images/paper.jpg" alt="картинка чистоголиста">
           <span class="card__image-label">&lt;/HTML&gt;</span>
         </div>
         <div class="card__content">
@@ -144,7 +144,7 @@
       <article class="content__card">
         <h2 class="card__title">1 спринт: А если не получится?</h2>
         <div class="card__image__box">
-          <img class="card__image" src="./images/begining.jpg" alt="изобоажение дорогис надписью старт">
+          <img class="card__image begining" src="./images/begining.jpg" alt="изобоажение дорогис надписью старт">
           <span class="card__image-label">&lt;/HTML&gt;</span>
         </div>
         <div class="card__content">
@@ -183,7 +183,7 @@
       <article class="content__card">
         <h2 class="card__title">2 спринт: Погоня за идеалом</h2>
         <div class="card__image__box">
-          <img class="card__image" src="./images/searchig-for.jpg" alt="на фотокарта и компас">
+          <img class="card__image searching" src="./images/searchig-for.jpg" alt="на фотокарта и компас">
           <span class="card__image-label">&lt;/HTML&gt;</span>
         </div>
         <div class="card__content">
@@ -224,7 +224,7 @@
       <article class="content__card">
         <h2 class="card__title">2 спринт: О тех, кто рядом</h2>
         <div class="card__image__box">
-          <img class="card__image" src="./images/together.jpg" alt="множество рук, одна на другой">
+          <img class="card__image together" src="./images/together.jpg" alt="множество рук, одна на другой">
           <span class="card__image-label">&lt;/HTML&gt;</span>
         </div>
         <div class="card__content">
@@ -266,7 +266,7 @@
       <article class="content__card">
         <h2 class="card__title">3 спринт: Обходные стратегии</h2>
         <div class="card__image__box">
-          <img class="card__image" src="./images/strategy.jpeg" alt="надпись стротегия и наброски вокруг">
+          <img class="card__image strategy" src="./images/strategy.jpeg" alt="надпись стротегия и наброски вокруг">
           <span class="card__image-label">&lt;/HTML&gt;</span>
         </div>
         <div class="card__content">
@@ -305,7 +305,7 @@
       <article class="content__card">
         <h2 class="card__title">3 спринт: Когда опускаются руки</h2>
         <div class="card__image__box">
-          <img class="card__image" src="./images/concentration.jpg" alt="рисунок девушка с множеством мыслей вокруг головы">
+          <img class="card__image concentration" src="./images/concentration.jpg" alt="рисунок девушка с множеством мыслей вокруг головы">
           <span class="card__image-label">&lt;/HTML&gt;</span>
         </div>
         <div class="card__content">
@@ -346,7 +346,7 @@
       <article class="content__card">
         <h2 class="card__title">«Сейчас я здесь»</h2>
         <div class="card__image__box">
-          <img class="card__image" src="./images/new-world.jpg" alt="космонавт завис в космосе">
+          <img class="card__image new-world" src="./images/new-world.jpg" alt="космонавт завис в космосе">
           <span class="card__image-label">&lt;/HTML&gt;</span>
         </div>
         <div class="card__content">
@@ -387,19 +387,17 @@
     </main>
     <footer class="footer adaptive-width">
       <button class="save-button anim-button"
-        type="button" 
-        onclick="window['dialog'].showModal()" 
-        aria-controls="dialog">
-        <div class="save-button-icon">
-          <svg viewBox="0 0 40 40" class="floppy">
-            <use href="#floppy">
-          </svg>
-        </div>
+          type="button" 
+          onclick="window['dialog'].showModal()" 
+          aria-controls="dialog">
+        <svg viewBox="0 0 40 40" class="save-button-icon">
+          <use href="#floppy"/>
+        </svg>
         <span class="button__text">Сохранить на память</span>
       </button>
     </footer>
     <svg class="visually-hidden"
-      xmlns="./svg/floppy.svg"
+      src="./svg/floppy.svg"
       stroke="currentColor"
       fill="currentColor">
       <symbol id="floppy">
