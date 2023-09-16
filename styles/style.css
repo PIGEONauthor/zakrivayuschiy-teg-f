@@ -15,18 +15,31 @@
 */
 
 .page {
-  display: flex;
-  flex-direction: column;
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
+  /*display: flex;
+  flex-direction: column;*/
+  min-inline-size: 320px;  min-block-size: 100dvb;
   font-family: var(--main-font);
   font-variation-settings: 'wght' var(--text-font-weight);
   color: var(--accent-color);
   background-color: var(--bg-color);
+
+/*
+  -из рекомендаций:
+
+  Последний градиент должен равномерно перетекать
+  цветами сверху вниз. В светлой теме от цвета #e7e7e7
+  к #1a1a1a, а в тёмной теме — от #007f0c к #004306.
+  Именно этот последний градиент создаст эффект изменения
+  насыщенности цвета. В светлой теме мы немного продлили
+  воздействие самого светлого оттенка и начали менять цвет
+  от 0.01% всей высоты градиента, чтобы усилить эффект.
+
+*/
+
   background-image:
-    repeating-linear-gradient(90deg, var(--bg-image-color_1), transparent 2px 4px),
-    repeating-linear-gradient(var(--bg-image-color_1), transparent 2px 4px),
-    linear-gradient(var(--bg-image-color_2), var(--bg-image-color_3));
+    repeating-linear-gradient(90deg, var(--bg-image-color_1)0px 2px, transparent 2px 4px),
+    repeating-linear-gradient(var(--bg-image-color_1)0px 2px, transparent 2px 4px),
+    linear-gradient(var(--bg-image-color_2) 0.01%, var(--bg-image-color_3));
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -35,8 +48,7 @@
 /* --------------------COMMON_STYLES-------------------- */
 
 .adaptive-width {
-  /*inline-size: 100%;*/
-  inline-size: min(100%, 696px);
+  inline-size: 100%;
 }
 
 .anim-button {
@@ -210,13 +222,13 @@
   inline-size: 100%;
   font-size: 18px;
   background-color: var(--bg-color);
+  border: 2px solid var(--accent-color);
 }
 
 .card__title {
   padding: 4px 10px;
   font-size: inherit;
   font-variation-settings: 'wght' var(--title-font-weight);
-  border: 2px solid var(--accent-color);
 }
 
 /* --------------------CARD_image-------------------- */
@@ -224,14 +236,14 @@
 .card__image__box {
   position: relative;
   display: flex;
-  border: 2px solid var(--accent-color);
-
+  block-size: 100%;
 }
 
 .card__image {
   inline-size: 100%;
   object-fit: cover;
   object-position: center;
+  border-block: 2px solid var(--accent-color);
 }
 
 .card__image-label {
@@ -267,8 +279,6 @@
 
 .card__content {
   padding: 25px 30px 0 25px;
-  border: 2px solid var(--accent-color);
-  border-block-end: none;
 }
 
 .card__content-text {
@@ -290,8 +300,6 @@
   align-items: center;
   justify-content: end;
   padding: 25px;
-  border: 2px solid var(--accent-color);
-  border-block-start: none;
 }
 
 /* ---------♥♥♥HEART♥♥♥--------- */
@@ -337,19 +345,19 @@
   mix-blend-mode: difference;
 }
 
-/* --------------------FOOTER-------------------- */
+/* --------------------SAVE_BUTTON-------------------- */
 
-.footer {
+/* .footer {
   display: flex;
   margin: auto;
-}
+} */
 
 .save-button {
   display: flex;
   flex-direction: column;
   gap: 8px;
   align-items: center;
-  margin: 52px auto 100px;
+  margin: 4px auto 100px;
   padding: 15px 20px;
 }
 
@@ -365,16 +373,22 @@
 
 /* --------------------MEDIA-------------------- */
 
-@media(width > 376px) {
+@media(width >= 376px) {
 
   .adaptive-width {
-     inline-size: 48.5%;
-     max-inline-size: 696px;
+    /*inline-size: 48.5%;
+    min-inline-size: 376px;
+    max-inline-size: 696px;*/
+    inline-size: clamp(376px, 48.5%, 696px);
   }
 
   .header__logo {
     margin-block-start: 19.5%;
-    max-inline-size: 1440px;
+    max-inline-size: 696px;
+  }
+
+  .card__image__box {
+    display: block;
   }
 
   .save-button {
@@ -418,6 +432,6 @@
   filter: hue-rotate(240deg);
 }
 
-.card__image_filter-brightness {
-  filter: brightness(130%);
+.card__image_filter-brightness-saturate {
+  filter: brightness(130%) saturate(200%);
 }
