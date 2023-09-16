@@ -20,20 +20,22 @@
     <dialog class="dialog" id="dialog">
       <div class="dialog__content">
         <div class="dialog__icon">
-          <svg viewBox="0 0 40 40" class="floppy">
-            <use href="#floppy"/>
+          <svg viewBox="0 0 40 40" class="floppy" aria-hidden="true">
+            <use href="./svg/floppy.svg#floppy"/>
           </svg>
         </div>
         <p>Вставьте дискету, чтобы продолжить</p>
       </div>
-      <button class="dialog__button anim-button"
-        type="button" 
-        onclick="window['dialog'].close()">
-        <span class="button__text">OK</span>
-      </button>
+      <form action="" method="dialog">
+        <button class="dialog__button anim-button"
+          type="submit" 
+          onclick="window['dialog'].close()">
+          <span class="button__text">OK</span>
+        </button>
+      </form>
     </dialog>
     <header class="header adaptive-width">
-      <div class="header__logo"><p>&lt;/HTML&gt;</p></div>
+      <a class="header__logo">&lt;/HTML&gt;</a>
       <h1 class="header__title">закрывающий тег</h1>
       <nav class="theme-menu header__theme-menu">
         <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
@@ -66,7 +68,7 @@
       <article class="content__card">
         <h2 class="card__title">Фритрек и нулевой спринт: Подготовка к работе</h2>
         <div class="card__image__box">
-          <img class="card__image car" src="./images/image.png" alt="картинка с изображением автомобиля">
+          <img class="card__image card__image_filter-blur" src="./images/image.png" alt="картинка с изображением автомобиля">
           <span class="card__image-label">&lt;/HTML&gt;</span>
         </div>
         <div class="card__content">
@@ -81,7 +83,7 @@
           </p>
         </div>
         <div class="card_like-section">
-          <button class="card__heart-button card__icon-button">
+          <button class="card__heart-button card__icon-button" type="button">
             <svg class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
               width="39"
@@ -96,7 +98,7 @@
               <path class="sparks" d="M36 13H39V16H36V13ZM27 27H30V30H27V27ZM18 33H21V36H18V33ZM9 27H12V30H9V27ZM24 0H27V3H24V0ZM33 3H36V6H33V3ZM3 3H6V6H3V3ZM12 0H15V3H12V0ZM0 13H3V16H0V13Z" fill="#FF0000"/>
             </svg>
           </button>
-          <button class="card__like-button anim-button">
+          <button class="card__like-button anim-button" type="button">
             <span class="button__text">Like</span>
           </button>
         </div>
@@ -105,7 +107,7 @@
       <article class="content__card">
         <h2 class="card__title">1 спринт: Я — чистый лист</h2>
         <div class="card__image__box">
-          <img class="card__image paper" src="./images/paper.jpg" alt="картинка чистоголиста">
+          <img class="card__image card__image_filter-contrast" src="./images/image.png" alt="картинка с изображением автомобиля">
           <span class="card__image-label">&lt;/HTML&gt;</span>
         </div>
         <div class="card__content">
@@ -146,7 +148,7 @@
       <article class="content__card">
         <h2 class="card__title">1 спринт: А если не получится?</h2>
         <div class="card__image__box">
-          <img class="card__image begining" src="./images/begining.jpg" alt="изобоажение дорогис надписью старт">
+          <img class="card__image card__image_filter-saturate" src="./images/image.png" alt="картинка с изображением автомобиля">
           <span class="card__image-label">&lt;/HTML&gt;</span>
         </div>
         <div class="card__content">
@@ -185,7 +187,7 @@
       <article class="content__card">
         <h2 class="card__title">2 спринт: Погоня за идеалом</h2>
         <div class="card__image__box">
-          <img class="card__image searching" src="./images/searchig-for.jpg" alt="на фотокарта и компас">
+          <img class="card__image card__image_filter-sepia" src="./images/image.png" alt="картинка с изображением автомобиля">
           <span class="card__image-label">&lt;/HTML&gt;</span>
         </div>
         <div class="card__content">
@@ -226,7 +228,7 @@
       <article class="content__card">
         <h2 class="card__title">2 спринт: О тех, кто рядом</h2>
         <div class="card__image__box">
-          <img class="card__image together" src="./images/together.jpg" alt="множество рук, одна на другой">
+          <img class="card__image card__image_filter-invert" src="./images/image.png" alt="картинка с изображением автомобиля">
           <span class="card__image-label">&lt;/HTML&gt;</span>
         </div>
         <div class="card__content">
@@ -268,7 +270,7 @@
       <article class="content__card">
         <h2 class="card__title">3 спринт: Обходные стратегии</h2>
         <div class="card__image__box">
-          <img class="card__image strategy" src="./images/strategy.jpeg" alt="надпись стротегия и наброски вокруг">
+          <img class="card__image card__image_filter-rotate" src="./images/image.png" alt="картинка с изображением автомобиля">
           <span class="card__image-label">&lt;/HTML&gt;</span>
         </div>
         <div class="card__content">
@@ -307,7 +309,7 @@
       <article class="content__card">
         <h2 class="card__title">3 спринт: Когда опускаются руки</h2>
         <div class="card__image__box">
-          <img class="card__image concentration" src="./images/concentration.jpg" alt="рисунок девушка с множеством мыслей вокруг головы">
+          <img class="card__image concentration" src="./images/image.png" alt="картинка с изображением автомобиля">
           <span class="card__image-label">&lt;/HTML&gt;</span>
         </div>
         <div class="card__content">
@@ -348,7 +350,7 @@
       <article class="content__card">
         <h2 class="card__title">«Сейчас я здесь»</h2>
         <div class="card__image__box">
-          <img class="card__image new-world" src="./images/new-world.jpg" alt="космонавт завис в космосе">
+          <img class="card__image card__image_filter-brightness card__image_filter-saturate" src="./images/image.png" alt="картинка с изображением автомобиля">
           <span class="card__image-label">&lt;/HTML&gt;</span>
         </div>
         <div class="card__content">
@@ -378,7 +380,7 @@
                 <path class="main-body" d="M12 9H9V12H12V9ZM15 12H12V15H15V12ZM18 9H15V12H18V9ZM12 15H9V18H12V15ZM15 15H12V18H15V15ZM15 18H12V21H15V18ZM18 12H15V15H18V12ZM18 21H15V24H18V21ZM18 18H15V21H18V18ZM27 9H30V12H27V9ZM24 9H27V12H24V9ZM27 12H30V15H27V12ZM24 12H27V15H24V12ZM21 9H24V12H21V9ZM27 15H30V18H27V15ZM24 15H27V18H24V15ZM24 18H27V21H24V18ZM21 12H24V15H21V12ZM21 21H24V24H21V21ZM21 18H24V21H21V18ZM21 21H18V24H21V21ZM21 24H18V27H21V24Z" fill="transparent"/>
                 <path class="core" d="M18 15H15V18H18V15ZM21 15H24V18H21V15ZM21 15H18V18H21V15ZM21 12H18V15H21V12ZM21 18H18V21H21V18Z" fill="transparent"/>
               </g>
-              <path class="sparks" d="M36 13H39V16H36V13ZM27 27H30V30H27V27ZM18 33H21V36H18V33ZM9 27H12V30H9V27ZM24 0H27V3H24V0ZM33 3H36V6H33V3ZM3 3H6V6H3V3ZM12 0H15V3H12V0ZM0 13H3V16H0V13Z" fill="#FF0000"/>
+              <path class="sparks" d="M36 13H39V16H36V13ZM27 27H30V30H27V27ZM18 33H21V36H18V33ZM9 27H12V30H9V27ZM24 0H27V3H24V0ZM33 3H36V6H33V3ZM3 3H6V6H3V3ZM12 0H15V3H12V0ZM0 13H3V16H0V13Z" fill="var(--heart-color)"/>
             </svg>
           </button>
           <button class="card__like-button anim-button">
@@ -393,33 +395,11 @@
           onclick="window['dialog'].showModal()" 
           aria-controls="dialog">
         <svg viewBox="0 0 40 40" class="save-button-icon">
-          <use href="#floppy"/>
+          <use href="./svg/floppy.svg#floppy"/>
         </svg>
-        <span class="button__text">Сохранить на память</span>
+        <span class="button__text">Сохранить на&nbsp;память</span>
       </button>
     </footer>
-    <svg class="visually-hidden"
-      xmlns="http://www.w3.org/2000/svg"
-      stroke="currentColor"
-      fill="currentColor">
-      <symbol id="floppy">
-        <path d="M0 0h3v3H0zM0 3h3v3H0zM0 6h3v3H0zM0 9h3v3H0zM0 12h3v3H0zM0 15h3v3H0zM0 18h3v3H0zM0 21h3v3H0zM0 24h3v3H0zM0 27h3v3H0zM0 30h3v3H0zM0 33h3v3H0zM0 36h3v3H0zM33 0v3h-3V0z"/>
-        <path d="M30.003 0v3h-3V0zM27 0v3h-3V0zM24 0v3h-3V0zM20.999 0v3h-3V0z"/>
-        <path d="M18 0v3h-3V0zM14.999 0v3h-3V0z"/>
-        <path d="M12 0v3H9V0zM8.996 0v3h-3V0z"/>
-        <path d="M6 0v3H3V0zM36 3v3h-3V3zM8.996 6v3h-3V6zM8.996 3v3h-3V3zM8.996 9v3h-3V9zM30.003 6v3h-3V6zM30.003 3v3h-3V3zM30.003 9v3h-3V9zM24 6v3h-3V6zM24 3v3h-3V3zM24 9v3h-3V9zM30.003 12v3h-3v-3zM27 12v3h-3v-3zM24 12v3h-3v-3zM20.999 12v3h-3v-3z"/>
-        <path d="M18 12v3h-3v-3zM14.999 12v3h-3v-3z"/>
-        <path d="M12 12v3H9v-3zM8.996 12v3h-3v-3zM33 21v3h-3v-3z"/>
-        <path d="M30.003 21v3h-3v-3zM27 21v3h-3v-3zM24 21v3h-3v-3zM20.999 21v3h-3v-3z"/>
-        <path d="M18 21v3h-3v-3zM14.999 21v3h-3v-3z"/>
-        <path d="M12 21v3H9v-3zM8.996 21v3h-3v-3zM33 24v3h-3v-3zM8.996 24v3h-3v-3zM33 27v3h-3v-3zM8.996 27v3h-3v-3zM33 30v3h-3v-3zM8.996 30v3h-3v-3zM8.996 33v3h-3v-3zM33 33v3h-3v-3zM36 36v3h-3v-3zM33 36v3h-3v-3z"/>
-        <path d="M30.003 36v3h-3v-3zM27 36v3h-3v-3zM24 36v3h-3v-3zM20.999 36v3h-3v-3z"/>
-        <path d="M18 36v3h-3v-3zM14.999 36v3h-3v-3z"/>
-        <path d="M12 36v3H9v-3zM8.996 36v3h-3v-3z"/>
-        <path d="M6 36v3H3v-3zM39 39h-3v-3h3zM39 36h-3v-3h3zM39 33h-3v-3h3zM39 30h-3v-3h3zM39 27h-3v-3h3zM39 24h-3v-3h3zM39 21h-3v-3h3zM39 18h-3v-3h3zM39 15h-3v-3h3zM39 12h-3V9h3zM39 9h-3V6h3z"/>
-      </symbol>
-    </svg>
     <script src="./scripts/like.js"></script>
   </body>
 </html>
-

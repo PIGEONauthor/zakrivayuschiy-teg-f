@@ -35,7 +35,8 @@
 /* --------------------COMMON_STYLES-------------------- */
 
 .adaptive-width {
-     inline-size: 100%;
+  /*inline-size: 100%;*/
+  inline-size: min(100%, 696px);
 }
 
 .anim-button {
@@ -60,6 +61,9 @@
 
 .anim-button:focus {
   outline: none;
+}
+
+.anim-button:focus-visible {
   box-shadow: 2px 2px 0px 0px var(--accent-color);
 }
 
@@ -112,7 +116,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /*inline-size: 100%;*/
   background-color: inherit;
   margin: 100px auto 102px;
   font-family: var(--accent-font);
@@ -127,6 +130,7 @@
 
 .header__title {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -161,7 +165,7 @@
   inset-block-end: -2px;
   display: block;
   inline-size: 0%;
-  height: 2px;
+  block-size: 2px;
   background-color: var(--accent-color);
   transition: inline-size .3s ease, opacity .3s ease;
 }
@@ -191,15 +195,6 @@
   animation: drifting 0.5s infinite ease-in-out alternate;
 }
 
-@keyframes drifting {
-  from {
-    inset-inline-start: -19px;
-  }
-  to {
-    inset-inline-start: -24px;
-  }
-}
-
 /* --------------------MAIN-------------------- */
 
 .content {
@@ -220,6 +215,7 @@
 .card__title {
   padding: 4px 10px;
   font-size: inherit;
+  font-variation-settings: 'wght' var(--title-font-weight);
   border: 2px solid var(--accent-color);
 }
 
@@ -318,103 +314,8 @@
   border: 2px solid var(--accent-color);
 }
 
-/* 
-
-  !!!! ХОЧУ ОБРАТИТЬ ВНИМАНИЕ !!!
-  
-  решил пойти немного дальше и доработал взаимодействие
-  с иконкой сердца, чтобы все эффекты работали при
-  наведении на само сердце:
-    1. внес изменения в скрипт, чтобы "is-liked" добавлялся
-      к классу "heart"
-    2. перевел всю интерактивность с "like-icon" на "heart",
-      то есть на силует сердца
-
-*/
-
 .heart {
   cursor: pointer;
-}
-
-.heart.is-liked {
-  transform-origin: 50% 50%;
-  animation: scale .3s ease-in alternate .1s;
-}
-
-@keyframes scale {
-  
-  to {
-    transform: scale(1.5);
-  }
-}
-
-/* ------------C♥RE------------- */
-
-.core {
-  transition: fill .3s ease .03s;
-}
-
-.heart:hover .core {
-  fill: var(--accent-color);
-  transition: fill .3s ease;
-}
-
-.heart:active .core {
-  fill: #FF0000;
-  transition: fill .3s ease;
-}
-
-.heart.is-liked .core {
-  fill: #FF0000;
-  transition: fill .3s ease;
-}
-
-/* ------------B♥DY------------- */
-
-.main-body {
-  transition: fill .3s ease;
-}
-
-.heart:hover .main-body {
-  fill: var(--accent-color);
-  transition: fill .3s ease .05s;
-}
-
-.heart:active .main-body {
-  fill: #FF0000;
-  transition: fill .3s ease .05s;
-}
-
-.heart.is-liked .main-body {
-  fill: #FF0000;
-  transition: fill .3s ease .05s;
-}
-
-/* ------------C♥NT♥UR------------- */
-
-.contour {
-  transition: fill .3s ease;
-}
-
-.heart.is-liked .contour {
-  fill: #FF0000;
-  transition: fill .3s ease .06s;
-}
-
-/* ------------SPARKS------------- */
-
-.sparks {
-  opacity: 0;
-}
-
-.heart.is-liked~.sparks {
-  animation: opacity .3s ease-in alternate .2s;
-}
-
-@keyframes opacity {
-  to {
-    opacity: 1;
-  }
 }
 
 /* --------------------LIKE_button-------------------- */
@@ -468,7 +369,7 @@
 
   .adaptive-width {
      inline-size: 48.5%;
-     max-inline-size: 1440px;
+     max-inline-size: 696px;
   }
 
   .header__logo {
@@ -493,30 +394,30 @@
 
 /* --------------------FILTERS-------------------- */
 
-.paper {
+.card__image_filter-blur {
   filter: blur(2px);
 }
 
-.begining {
+.card__image_filter-contrast {
   filter: contrast(150%);
 }
 
-.searching {
+.card__image_filter-saturate {
   filter: saturate(500%);
 }
 
-.together {
+.card__image_filter-sepia {
   filter: sepia(50%);
 }
 
-.strategy {
+.card__image_filter-invert {
   filter: invert(100%);
 }
 
-.concentration {
+.card__image_filter-rotate {
   filter: hue-rotate(240deg);
 }
 
-.new-world {
-  filter: brightness(130%) saturate(200%);
+.card__image_filter-brightness {
+  filter: brightness(130%);
 }

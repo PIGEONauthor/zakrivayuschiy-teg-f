@@ -12,3 +12,100 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+/* ------------▶------------ */
+
+@keyframes drifting {
+  from {
+    inset-inline-start: -19px;
+  }
+  to {
+    inset-inline-start: -24px;
+  }
+}
+
+/* ---------♥♥♥HEART♥♥♥--------- */
+
+.heart.is-liked {
+    transform-origin: 50% 50%;
+    animation: scale .3s ease-in alternate .1s;
+}
+
+@keyframes scale {
+  
+  to {
+    transform: scale(1.5);
+  }
+}
+
+/* ------------C♥RE------------- */
+
+.core {
+  transition: fill .3s linear .03s;
+}
+
+.heart:hover .core {
+  fill: var(--accent-color);
+  transition: fill .3s linear;
+}
+
+.heart:active .core {
+  fill: var(--heart-color);
+  transition: fill .3s linear;
+}
+
+.heart.is-liked .core {
+  fill: var(--heart-color);
+  transition: fill .3s linear;
+}
+
+/* ------------B♥DY------------- */
+
+.main-body {
+  transition: fill .3s linear;
+}
+
+.heart:hover .main-body {
+  fill: var(--accent-color);
+  transition: fill .3s linear .05s;
+}
+
+.heart:active .main-body {
+  fill: var(--heart-color);
+  transition: fill .3s linear .05s;
+}
+
+.heart.is-liked .main-body {
+  fill: var(--heart-color);
+  transition: fill .3s linear .05s;
+}
+
+/* ------------C♥NT♥UR------------- */
+
+.contour {
+  transition: fill .3s linear;
+}
+
+.heart.is-liked .contour {
+  fill: var(--heart-color);
+  transition: fill .3s linear .06s;
+}
+
+/* ------------SPARKS------------- */
+
+.sparks {
+  opacity: 0;
+}
+
+.heart.is-liked~.sparks {
+
+  /* в рекомендациях указана задержка в 0.1s */
+  
+  animation: opacity .3s ease-in alternate .3s;
+}
+
+@keyframes opacity {
+  to {
+    opacity: 1;
+  }
+}
