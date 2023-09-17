@@ -137,6 +137,7 @@
   margin-block-start: 32.5%;
   margin-block-end: 21px;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  text-decoration: none;
 }
 
 .header__title {
